@@ -1,5 +1,6 @@
 # Text Summarizer App
 This is a simple Text Summarizer App built with Python using the Streamlit library.
+- **Live application** - https://0lastextsummarizer.streamlit.app/
 
 ## Overview
 The Text Summarizer App allows users to input text and receive a summarized version of the text. Additionally, the app provides sentiment analysis for the entered text.
@@ -28,3 +29,17 @@ pip install -r requirements.txt
 
 4. Access the app in your web browser at http://localhost:8501.
 
+## Usage
+- Enter text in the provided text area.
+- Click the "Generate Summary" button to get a summarized version of the text.
+- Optionally, click the "Perform Sentiment Analysis" button to analyze the sentiment of the entered text.
+
+## Dependencies
+- NLTK: Natural Language Toolkit for natural language processing.
+- Streamlit: Open-source Python library for creating web applications.
+  
+## Contributing
+If you have suggestions or found a bug, feel free to open an issue or create a pull request.
+
+## License
+This project is licensed under the MIT License.
