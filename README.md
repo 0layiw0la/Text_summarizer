@@ -18,13 +18,13 @@ pip install -r requirements.txt
 
 ### How to Run
 1. Clone the repository:
-git clone https://github.com/0layiw0la/Text_summarizer.git
+- git clone https://github.com/0layiw0la/Text_summarizer.git
 
 2. Navigate to the project directory:
-cd Text_summarizer
+- cd Text_summarizer
 
 3. Run the app:
-streamlit run TextAnalyzer.py
+- streamlit run TextAnalyzer.py
 
 4. Access the app in your web browser at http://localhost:8501.
 
