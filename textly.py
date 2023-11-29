@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Nov 29 01:46:52 2023
-
-@author: USER
-"""
 import nltk
 
 def generate_summary(text):
