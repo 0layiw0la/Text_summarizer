@@ -37,6 +37,9 @@ pip install -r requirements.txt
 ## Dependencies
 - NLTK: Natural Language Toolkit for natural language processing.
 - Streamlit: Open-source Python library for creating web applications.
-  
+
+## Contributing
+If you have suggestions or found a bug, feel free to open an issue or create a pull request.
+
 ## License
 This project is licensed under the MIT License.
