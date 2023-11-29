@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Nov 29 02:00:07 2023
-
-@author: USER
-"""
-
 import streamlit as st
 from textly import generate_summary
 from textly import sentiment
