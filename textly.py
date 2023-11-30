@@ -1,11 +1,11 @@
 import nltk
+from transformers import pipeline
+summarizer = pipeline('summarization')
 def summarize(text):
-    from transformers import pipeline
     text = str(text)
     if len(text.split(" ")) > 1000:
         return "Input too long"
     else:
-        summarizer = pipeline('summarization')
         short_text = summarizer(text,max_length = 300, min_length=20,do_sample=True)
         return short_text
     
