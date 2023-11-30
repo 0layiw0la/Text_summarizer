@@ -49,10 +49,10 @@ def sentiment(text):
     text = str(text)
     sia = SentimentIntensityAnalyzer()
     sent = sia.polarity_scores(text)
-    if sent['neu'] > 0.8:
-        sentiment_label = 'Neutral'
-    elif sent['pos'] > 0.1 and (sent['pos'] > sent['neg']):
+    if sent['pos'] > 0.1 and (sent['pos'] > sent['neg']):
         sentiment_label = 'Positive'
+    elif sent['neu'] > 0.8:
+        sentiment_label = 'Neutral'
     elif (sent['neg'] > 0.1) and (sent['neg'] > sent['pos']):
         sentiment_label = 'Negative'
     else:
