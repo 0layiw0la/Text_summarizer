@@ -1,5 +1,5 @@
 import streamlit as st
-from textly import generate_summary
+from textly import summarize
 from textly import sentiment
 
 positive_style = "color: green; font-weight: bold;"
@@ -7,18 +7,18 @@ negative_style = "color: red; font-weight: bold;"
 def main():
     
     st.title('Text Summarizer App')
+    st.write("1000 word maximum")
 
-    # User input text
-    user_input = st.text_area("Enter Text to Summarize")
+    # Button to trigger summarization
+    if st.button("Generate Summary"):
+        # Check if user input is not empty
+        if user_input:
+            # Generate summary using the function
+            summary = summarize(user_input)
 
-    # Check if user input is not empty
-    if user_input:
-        # Generate summary using the function
-        summary = generate_summary(user_input)
-
-        # Display the generated summary
-        st.subheader("Generated Summary:")
-        st.write(summary)
+            # Display the generated summary
+            st.subheader("Generated Summary:")
+            st.write(summary)
         # Button to trigger sentiment analysis
     if st.button("Perform Sentiment Analysis"):
         # Perform sentiment analysis using the sentiment function
