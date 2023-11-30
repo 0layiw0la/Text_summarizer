@@ -37,6 +37,11 @@ pip install -r requirements.txt
 ## Dependencies
 - NLTK: Natural Language Toolkit for natural language processing.
 - Streamlit: Open-source Python library for creating web applications.
+- BART: Bidirectional and Auto-Regressive Transformers, a transformer-based model developed by Facebook AI. It is designed for various natural language processing tasks, including text generation and summarization.
+
+## Limitations
+- Currently accepts only 1000 word long input.
+- Sentiment analysis function performs poorly when dealing with sarcastic text (best used for academic or more formal text).
 
 ## Contributing
 If you have suggestions or found a bug, feel free to open an issue or create a pull request.
