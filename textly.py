@@ -9,7 +9,7 @@ def generate_summary(text):
     text = str(text)
     sent_list = nltk.sent_tokenize(text)
     if len(sent_list) > 12:
-        length = int(round(len(sent_list) / 7, 0))
+        length = int(round(len(sent_list) / 10, 0))
     else:
         length = 1
 
