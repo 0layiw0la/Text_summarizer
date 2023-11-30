@@ -1,5 +1,11 @@
 import nltk
-
+def summarize(text):
+    from transformers import pipeline
+    text = str(text)
+    summarizer = pipeline('summarization')
+    short_text = summarizer(text,max_length = 300, min_length=20,do_sample=True)
+    return short_text
+    
 def generate_summary(text):
     import string
     from heapq import nlargest
