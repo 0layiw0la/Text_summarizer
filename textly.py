@@ -1,14 +1,22 @@
 import nltk
 from transformers import pipeline
-summarizer = pipeline('summarization')
+import streamlit as st
+
+# Function to summarize text
+@st.cache(allow_output_mutation=True)
 def summarize(text):
     text = str(text)
     if len(text.split(" ")) > 1000:
         return "Input too long"
     else:
-        sum = summarizer(text,max_length = 500, min_length=20,do_sample=True)
-        return sum[0]['summary_text']
-    
+        # Download the summarization model
+        summarizer = pipeline('summarization')
+        # Generate summary
+        sum_result = summarizer(text, max_length=500, min_length=20, do_sample=True)
+        return sum_result[0]['summary_text']
+
+# Function to perform sentiment analysis
+@st.cache
 def sentiment(text):
     nltk.download('vader_lexicon')
     from nltk.sentiment import SentimentIntensityAnalyzer
@@ -24,6 +32,3 @@ def sentiment(text):
     else:
         sentiment_label = 'Neutral'
     return sentiment_label
-
-        
-    
