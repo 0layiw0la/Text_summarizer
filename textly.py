@@ -3,13 +3,13 @@ from transformers import pipeline
 import streamlit as st
 
 # Function to summarize text
-@st.cache_resource(allow_output_mutation=True)
 def summarize(text):
     text = str(text)
     if len(text.split(" ")) > 700:
         return "Input too long"
     else:
         # Download the summarization model
+        @st.cache_resource
         summarizer = pipeline('summarization')
         # Generate summary
         sum_result = summarizer(text, max_length=500, min_length=20, do_sample=True)
