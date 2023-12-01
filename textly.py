@@ -6,8 +6,8 @@ def summarize(text):
     if len(text.split(" ")) > 1000:
         return "Input too long"
     else:
-        short_text = summarizer(text,max_length = 500, min_length=20,do_sample=True)
-        return str(short_text[0]['summary_text'])
+        sum = summarizer(text,max_length = 500, min_length=20,do_sample=True)
+        return sum[0]['summary_text']
     
 def sentiment(text):
     nltk.download('vader_lexicon')
