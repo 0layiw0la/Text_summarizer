@@ -13,7 +13,7 @@ def summarize(text):
     else:
         summarizer = load_model()
         # Generate summary
-        sum_result = summarizer(text, max_length=500, min_length=20, do_sample=True)
+        sum_result = summarizer(text, max_length=250, min_length=20, do_sample=True)
         return sum_result[0]['summary_text']
 
 # Function to perform sentiment analysis
