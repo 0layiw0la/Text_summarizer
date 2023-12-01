@@ -3,7 +3,7 @@ from transformers import pipeline
 import streamlit as st
 
 # Function to summarize text
-@st.cache(allow_output_mutation=True)
+@st.cache_resource(allow_output_mutation=True)
 def summarize(text):
     text = str(text)
     if len(text.split(" ")) > 700:
@@ -16,7 +16,7 @@ def summarize(text):
         return sum_result[0]['summary_text']
 
 # Function to perform sentiment analysis
-@st.cache
+@st.cache_resource
 def sentiment(text):
     nltk.download('vader_lexicon')
     from nltk.sentiment import SentimentIntensityAnalyzer
