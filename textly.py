@@ -1,7 +1,8 @@
 import nltk
 from transformers import pipeline
 import streamlit as st
-
+@st.cache_resource
+summarizer = pipeline('summarization')
 # Function to summarize text
 def summarize(text):
     text = str(text)
@@ -9,8 +10,6 @@ def summarize(text):
         return "Input too long"
     else:
         # Download the summarization model
-        @st.cache_resource
-        summarizer = pipeline('summarization')
         # Generate summary
         sum_result = summarizer(text, max_length=500, min_length=20, do_sample=True)
         return sum_result[0]['summary_text']
