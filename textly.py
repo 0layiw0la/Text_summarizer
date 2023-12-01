@@ -6,7 +6,7 @@ import streamlit as st
 @st.cache(allow_output_mutation=True)
 def summarize(text):
     text = str(text)
-    if len(text.split(" ")) > 1000:
+    if len(text.split(" ")) > 700:
         return "Input too long"
     else:
         # Download the summarization model
