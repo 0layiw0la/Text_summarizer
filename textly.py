@@ -24,7 +24,7 @@ def extract_text_from_pdf(file):
     full_text = ""
     for page_num in range(len(pdf_reader.pages)):
         page = pdf_reader.pages[page_num]
-        full_text += page.extractText() + "\n"
+        full_text += page.extract_text() + "\n"
     return full_text
     
 def summarize(text,max_value=350,min_value=50):
