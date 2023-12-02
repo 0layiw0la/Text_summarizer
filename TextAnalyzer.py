@@ -1,6 +1,7 @@
 import streamlit as st
 from textly import summarize
 from textly import sentiment
+from textly import set_global_max set_global_min
 
 positive_style = "color: green; font-weight: bold;"
 negative_style = "color: red; font-weight: bold;"
@@ -13,11 +14,11 @@ def main():
 
     # Buttons that determine summary length
     if st.button('Short'):
-        global max_value = 200
-        global min_value = 30
+        set_global_max = 150
+        set_global_min = 30
     elif st.button('Long'):
-        global max_value = 350
-        global min_value = 90
+        set_global_max = 350
+        set_global_min = 90
     user_input = st.text_area('Enter text here')
     # Button to trigger summarization
     if st.button("Generate Summary"):
