@@ -2,7 +2,7 @@ import nltk
 from transformers import pipeline
 import streamlit as st
 import docx
-from PyPDF2 import PdfFileReader
+from PyPDF2 import PdfReader
 
 @st.cache_resource
 def load_model():
