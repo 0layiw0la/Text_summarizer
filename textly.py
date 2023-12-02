@@ -10,6 +10,8 @@ def load_model():
 # Function to summarize text
 
 def extract_text_from_txt(file):
+    # Open the file in text mode ('r')
+    with open(file_path, 'r') as file:
     return file.read()
 
 def extract_text_from_docx(file):
