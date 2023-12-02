@@ -8,19 +8,23 @@ def main():
     
     st.title('Text Summarizer App')
     #Buttons that determine summary length
+    max_value = 350
+    min_value = 90
+
+    # Buttons that determine summary length
     if st.button('Short'):
-        max = 200
-        min = 30
-    if st.button('Long'):
-        max = 350
-        min = 90
+        max_value = 200
+        min_value = 30
+    elif st.button('Long'):
+        max_value = 350
+        min_value = 90
     user_input = st.text_area('Enter text here')
     # Button to trigger summarization
     if st.button("Generate Summary"):
         # Check if user input is not empty
         if user_input:
             # Generate summary using the function
-            summary = summarize(user_input,max,min)
+            summary = summarize(user_input,max_value,min_value)
 
             # Display the generated summary
             st.subheader("Generated Summary:")
