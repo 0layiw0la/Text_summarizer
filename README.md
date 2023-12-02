@@ -3,7 +3,8 @@ This is a simple Text Summarizer App built with Python using the Streamlit libra
 - **Live application** - https://0lastextsummarizer.streamlit.app/
 
 ## Overview
-The Text Summarizer App allows users to input text and receive a summarized version of the text. Additionally, the app provides sentiment analysis for the entered text.
+The Text Summarizer App allows users to input text and receive a summarized version of the text, you can either upload or copy and paste text. Additionally, the app provides sentiment analysis for the entered text.
+**Note**: Only pdf,docx,txt files can be uploaded for now.
 
 ## Features
 - Text Summarization: The app uses natural language processing techniques to generate a concise summary of the input text.
@@ -41,6 +42,7 @@ pip install -r requirements.txt
 
 ## Limitations
 - Sentiment analysis function performs poorly when dealing with sarcastic text (best used for academic or more formal text).
+- Only docx,txt and pdf files can be uploaded for now
 
 ## Contributing
 If you have suggestions or found a bug, feel free to open an issue or create a pull request.
