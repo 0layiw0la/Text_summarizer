@@ -5,7 +5,7 @@ from textly import sentiment,summarize
 #negative_style = "color: red; font-weight: bold;"
 def main():  
     st.title('Text Summarizer App')
-    col1,col2 = st.columns([1,1,1])
+    col1,col2,col3 = st.columns([1,1,1])
     with col1:
         short = st.button("Brief overview")
     with col2:
