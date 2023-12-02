@@ -7,7 +7,7 @@ negative_style = "color: red; font-weight: bold;"
 def main():
     
     st.title('Text Summarizer App')
-    user_input = st.text_area("1000 words maximum")
+    user_input = st.text_area('Enter text here')
     # Button to trigger summarization
     if st.button("Generate Summary"):
         # Check if user input is not empty
