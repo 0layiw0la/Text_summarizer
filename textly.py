@@ -20,7 +20,7 @@ def extract_text_from_docx(file):
     return full_text
 
 def extract_text_from_pdf(file):
-    pdf_reader = PdfFileReader(file)
+    pdf_reader = PdfReader(file)
     full_text = ""
     for page_num in range(pdf_reader.numPages):
         page = pdf_reader.getPage(page_num)
