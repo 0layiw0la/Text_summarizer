@@ -2,3 +2,4 @@ streamlit
 nltk
 transformers
 torch
+python-docx
