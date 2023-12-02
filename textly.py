@@ -28,7 +28,7 @@ def summarize(text,max_value=350,min_value=50):
     summarizer = load_model()
     summary = []
     for i in chunks:
-        sumr = summarizer(i,max_length=max_value,min_length=min_value,do_sample=True)[0]['summary_text']
+        sumr = summarizer(i,max_length=250,min_length=50,do_sample=True)[0]['summary_text']
         summary.append(sumr)
     return ' '.join(summary)
 
