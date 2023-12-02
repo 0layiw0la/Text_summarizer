@@ -11,8 +11,7 @@ def main():
     with col2:
         long = st.button("Full summary")
     user_input = st.text_area('Enter text here')
-    max_size = 20*1024*1024
-    uploaded_file = st.file_uploader("Choose a file", type=["txt", "docx", "pdf"],max_upload_size=max_size)
+    uploaded_file = st.file_uploader("Choose a file", type=["txt", "docx", "pdf"])
     if uploaded_file is not None:
         file_extension = uploaded_file.name.split(".")[-1]
 
