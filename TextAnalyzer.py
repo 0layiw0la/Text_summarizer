@@ -14,12 +14,12 @@ def main():
     if short_button:
         st.session_state.max_value = 120
         st.session_state.min_value = 20
-    
+    st.session_state.sync()
     long_button = st.button('Long')
     if long_button:
         st.session_state.max_value = 350
         st.session_state.min_value = 80  
-    
+    st.session_state.sync()
     user_input = st.text_area('Enter text here')
     
     # Button to trigger summarization
