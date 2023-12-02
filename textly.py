@@ -12,7 +12,8 @@ def load_model():
 def extract_text_from_txt(file):
     # Open the file in text mode ('r')
     with open(file_path, 'r') as file:
-    return file.read()
+        text = file.read()
+    return text
 
 def extract_text_from_docx(file):
     doc = docx.Document(file)
