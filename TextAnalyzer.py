@@ -26,7 +26,7 @@ def main():
     if st.button("Generate Summary"):
         # Check if user input is not empty
         if user_input:
-            summary = summarize(user_input, st.session_state.max_value, st.session_state.min_value)
+            summary = summarize(user_input, max_value= st.session_state.max_value, min_value = st.session_state.min_value)
 
             # Display the generated summary
             st.subheader("Generated Summary:")
