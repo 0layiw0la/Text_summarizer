@@ -1,8 +1,8 @@
 import streamlit as st
 from textly import sentiment,summarize
 
-#positive_style = "color: green; font-weight: bold;"
-#negative_style = "color: red; font-weight: bold;"
+positive_style = "color: green; font-weight: bold;"
+negative_style = "color: red; font-weight: bold;"
 def main():  
     st.title('Text Summarizer App')
     col1,col2,col3,col4,col5 = st.columns([1,1,1,1,1])
