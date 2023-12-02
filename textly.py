@@ -1,11 +1,32 @@
 import nltk
 from transformers import pipeline
 import streamlit as st
+import docx
+from PyPDF2 import PdfFileReader
 
 @st.cache_resource
 def load_model():
     return pipeline('summarization')
 # Function to summarize text
+
+def extract_text_from_txt(file):
+    return file.read()
+
+def extract_text_from_docx(file):
+    doc = docx.Document(file)
+    full_text = ""
+    for para in doc.paragraphs:
+        full_text += para.text + "\n"
+    return full_text
+
+def extract_text_from_pdf(file):
+    pdf_reader = PdfFileReader(file)
+    full_text = ""
+    for page_num in range(pdf_reader.numPages):
+        page = pdf_reader.getPage(page_num)
+        full_text += page.extractText() + "\n"
+    return full_text
+    
 def summarize(text,max_value=350,min_value=50):
     text = text.replace('.','.<eos>')
     text = text.replace('?','?<eos>')
