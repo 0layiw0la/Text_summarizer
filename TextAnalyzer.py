@@ -9,7 +9,7 @@ def main():
     with col1:
         short = st.button("Brief overview")
     with col2:
-        long = st.button("Comprehensive summary")
+        long = st.button("Full summary")
     user_input = st.text_area('Enter text here')
     
     # Button to trigger summarization
