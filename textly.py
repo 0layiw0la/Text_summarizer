@@ -5,6 +5,12 @@ import streamlit as st
 @st.cache_resource
 def load_model():
     return pipeline('summarization')
+def set_global_max(new_value):
+    global max_value
+    max_value = new_value
+def set_global_min(new_value):
+    global min_value
+    min_value = new_value
 # Function to summarize text
 def summarize(text,max_value=350,min_value=50):
     text = text.replace('.','.<eos>')
