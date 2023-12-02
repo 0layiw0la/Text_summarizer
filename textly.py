@@ -22,8 +22,8 @@ def extract_text_from_docx(file):
 def extract_text_from_pdf(file):
     pdf_reader = PdfReader(file)
     full_text = ""
-    for page_num in range(pdf_reader.numPages):
-        page = pdf_reader.getPage(page_num)
+    for page_num in range(len(pdf_reader.pages)):
+        page = pdf_reader.pages[page_num]
         full_text += page.extractText() + "\n"
     return full_text
     
