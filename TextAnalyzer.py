@@ -1,7 +1,7 @@
 import streamlit as st
 from textly import summarize
 from textly import sentiment
-from textly import set_global_max set_global_min
+from textly import set_global_max,set_global_min
 
 positive_style = "color: green; font-weight: bold;"
 negative_style = "color: red; font-weight: bold;"
