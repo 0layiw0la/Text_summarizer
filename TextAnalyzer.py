@@ -6,13 +6,20 @@ negative_style = "color: red; font-weight: bold;"
 def main():
     
     st.title('Text Summarizer App')
+    s = st.button('short')
+    l = st.button('Long')
     user_input = st.text_area('Enter text here')
     # Button to trigger summarization
     if st.button("Generate Summary"):
         # Check if user input is not empty
         if user_input:
-            # Generate summary using the function
-            summary = summarize(user_input,max_value,min_value)
+            if s:           
+                # Generate summary using the function
+                summary = summarize(user_input,120,20)
+            elif l:
+                summary = summarize(user_input,350,80)
+            else:
+                summary = summarize(user_input)
 
             # Display the generated summary
             st.subheader("Generated Summary:")
