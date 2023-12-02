@@ -7,14 +7,30 @@ def load_model():
     return pipeline('summarization')
 # Function to summarize text
 def summarize(text):
-    text = str(text)
-    if len(text.split(" ")) > 700:
-        return "Input too long"
-    else:
-        summarizer = load_model()
-        # Generate summary
-        sum_result = summarizer(text, max_length=250, min_length=20, do_sample=True)
-        return sum_result[0]['summary_text']
+    text = text.replace('.','.<eos>')
+    text = text.replace('?','?<eos>')
+    text = text.replace('!','!<eos>')
+    max_chunk = 600
+    sentences = text.split('<eos>')
+    current_chunk = 0 
+    chunks = []
+    for sentence in sentences:
+        if len(chunks) == current_chunk + 1: 
+            if len(chunks[current_chunk]) + len(sentence.split(' ')) < max_chunk:
+                chunks[current_chunk].extend(sentence.split(' '))
+            else:
+                current_chunk += 1
+                chunks.append(sentence.split(' '))
+        else:
+            chunks.append(sentence.split(' '))
+    for chunk_id in range(len(chunks)):
+        chunks[chunk_id] = ' '.join(chunks[chunk_id])
+    summarizer = load_model()
+    summary = []
+    for i in chunks:
+        sumr = summarizer(i,max_length=200,min_length=30,do_sample=True)[0]['summary_text']
+        summary.append(sumr)
+    return ' '.join(summary)
 
 # Function to perform sentiment analysis
 
