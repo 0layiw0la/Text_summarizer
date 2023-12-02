@@ -9,7 +9,7 @@ def load_model():
     return pipeline('summarization')
 # Function to summarize text
 
-def extract_text_from_txt(file):
+def extract_text_from_txt(file_path):
     # Open the file in text mode ('r')
     with open(file_path, 'r') as file:
         text = file.read()
