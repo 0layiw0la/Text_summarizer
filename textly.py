@@ -6,7 +6,7 @@ import streamlit as st
 def load_model():
     return pipeline('summarization')
 # Function to summarize text
-def summarize(text,max=350,min=50):
+def summarize(text,max_value=350,min_value=50):
     text = text.replace('.','.<eos>')
     text = text.replace('?','?<eos>')
     text = text.replace('!','!<eos>')
@@ -28,7 +28,7 @@ def summarize(text,max=350,min=50):
     summarizer = load_model()
     summary = []
     for i in chunks:
-        sumr = summarizer(i,max_length=max,min_length=min,do_sample=True)[0]['summary_text']
+        sumr = summarizer(i,max_length=max_value,min_length=min_value,do_sample=True)[0]['summary_text']
         summary.append(sumr)
     return ' '.join(summary)
 
