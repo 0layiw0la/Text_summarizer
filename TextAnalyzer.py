@@ -12,7 +12,7 @@ def main():
 
     # Buttons that determine summary length
     if st.button('Short'):
-        set_global_max(150)
+        max_value = 150
         set_global_min(20)
     elif st.button('Long'):
         set_global_max(350)
