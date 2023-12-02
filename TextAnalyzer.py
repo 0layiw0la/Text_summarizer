@@ -8,7 +8,8 @@ def main():
     
     st.title('Text Summarizer App')
     #Buttons that determine summary length
-
+    max_value = 350
+    min_value = 90
 
     # Buttons that determine summary length
     if st.button('Short'):
