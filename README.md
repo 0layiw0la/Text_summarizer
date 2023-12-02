@@ -40,7 +40,6 @@ pip install -r requirements.txt
 - BART: Bidirectional and Auto-Regressive Transformers, a transformer-based model developed by Facebook AI. It is designed for various natural language processing tasks, including text generation and summarization.
 
 ## Limitations
-- Currently accepts only 1000 word long input.
 - Sentiment analysis function performs poorly when dealing with sarcastic text (best used for academic or more formal text).
 
 ## Contributing
