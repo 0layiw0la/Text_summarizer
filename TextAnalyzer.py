@@ -27,17 +27,17 @@ def main():
     if short:
         # Check if user input is not empty
         if user_input:
-            summary = summarize(user_input, max_value= 120, min_value = 20)
+            summary = summarize(user_input, max_value= 100, min_value = 20)
             # Display the generated summary
             st.subheader("Generated Summary:")
             st.write(summary)
         elif uploaded_file is not None:
-            summary = summarize(text,max_value= 120, min_value = 20)
+            summary = summarize(text,max_value= 100, min_value = 20)
             st.write(summary)
     if long:
         # Check if user input is not empty
         if user_input:
-            summary = summarize(user_input, max_value= 350, min_value = 80)
+            summary = summarize(user_input, max_value= 350, min_value = 90)
             # Display the generated summary
             st.subheader("Generated Summary:")
             st.write(summary)
