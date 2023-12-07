@@ -10,6 +10,9 @@ def main():
         short = st.button("Brief overview")
     with col2:
         long = st.button("Full summary")
+    with col3:
+        ans = st.button("Answer Question")
+        
     user_input = st.text_area('Enter text here')
     uploaded_file = st.file_uploader("Choose a file", type=["txt", "docx", "pdf"])
     if uploaded_file is not None:
@@ -23,6 +26,11 @@ def main():
 
         elif file_extension == "pdf":
             text = extract_text_from_pdf(uploaded_file)
+    if ans:
+        if uploaded_file is not None:
+            if user_input:
+                answer = answer(user_input,text) 
+                st.write(answer)
     # Button to trigger summarization
     if short:
         # Check if user input is not empty
