@@ -72,21 +72,3 @@ def sentiment(text):
         sentiment_label = 'Neutral'
     return sentiment_label
 
-# Context based q&a
-@st.cache_resource
-def load_model_2():
-    model_name = "deepset/tinyroberta-squad2"
-    nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
-    return nlp
-
-def answer(question,context):
-    nlp = load_model_2()
-    QA_input = {
-        'question':question,
-        'context':context
-    }
-    response = nlp(QA_input)
-    if response['score'] < 0.000000001:
-        return 'No suitble answer found in context :(. Consider checking manually if you are sure answer is provided.'
-    else:
-        return response['answer']
