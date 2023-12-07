@@ -5,13 +5,13 @@ positive_style = "color: green; font-weight: bold;"
 negative_style = "color: red; font-weight: bold;"
 def main():  
     st.title('Text Summarizer App')
-    col1,col2,col3,col4,col5 = st.columns([1,1,1,1,1])
+    col1,col2,col3,col4 = st.columns([1,1,1,1])
     with col1:
         short = st.button("Brief overview")
     with col2:
         long = st.button("Full summary")
     with col3:
-        ans = st.button("Answer Question")
+        ans = st.button("Generate Answer")
         
     user_input = st.text_area('Enter text here')
     uploaded_file = st.file_uploader("Choose a file", type=["txt", "docx", "pdf"])
