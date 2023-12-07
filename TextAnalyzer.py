@@ -29,8 +29,8 @@ def main():
     if ans:
         if uploaded_file is not None:
             if user_input:
-                answer = answer(user_input,text) 
-                st.write(answer)
+                an = answer(user_input,text) 
+                st.write(an)
     # Button to trigger summarization
     if short:
         # Check if user input is not empty
