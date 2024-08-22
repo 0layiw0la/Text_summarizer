@@ -1,5 +1,5 @@
 import streamlit as st
-from textly import sentiment, summarize, extract_text_from_txt, extract_text_from_docx, extract_text_from_pdf
+from textly import load_model, sentiment, summarize, extract_text_from_txt, extract_text_from_docx, extract_text_from_pdf
 
 positive_style = "color: green; font-weight: bold;"
 negative_style = "color: red; font-weight: bold;"
