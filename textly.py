@@ -1,5 +1,5 @@
 import nltk
-from transformers import pipeline, AutoModelForQuestionAnswering, AutoTokenizer
+from transformers import pipeline
 import streamlit as st
 import docx
 from PyPDF2 import PdfReader
@@ -7,7 +7,6 @@ from PyPDF2 import PdfReader
 @st.cache_resource
 def load_model():
     return pipeline('summarization')
-# Function to summarize text
 
 def extract_text_from_txt(file):
     text = str(file.read())
@@ -27,11 +26,11 @@ def extract_text_from_pdf(file):
         page = pdf_reader.pages[page_num]
         full_text += page.extract_text() + "\n"
     return full_text
-    
-def summarize(text,max_value=350,min_value=50):
-    text = text.replace('.','.<eos>')
-    text = text.replace('?','?<eos>')
-    text = text.replace('!','!<eos>')
+
+def summarize(text, summarizer, max_value=350, min_value=50):
+    text = text.replace('.', '.<eos>')
+    text = text.replace('?', '?<eos>')
+    text = text.replace('!', '!<eos>')
     max_chunk = 600
     sentences = text.split('<eos>')
     current_chunk = 0 
@@ -47,14 +46,11 @@ def summarize(text,max_value=350,min_value=50):
             chunks.append(sentence.split(' '))
     for chunk_id in range(len(chunks)):
         chunks[chunk_id] = ' '.join(chunks[chunk_id])
-    summarizer = load_model()
     summary = []
     for i in chunks:
-        sumr = summarizer(i,max_length=max_value,min_length=min_value,do_sample=False)[0]['summary_text']
+        sumr = summarizer(i, max_length=max_value, min_length=min_value, do_sample=False)[0]['summary_text']
         summary.append(sumr)
     return ' '.join(summary)
-
-# Function to perform sentiment analysis
 
 def sentiment(text):
     nltk.download('vader_lexicon')
@@ -71,4 +67,3 @@ def sentiment(text):
     else:
         sentiment_label = 'Neutral'
     return sentiment_label
-
